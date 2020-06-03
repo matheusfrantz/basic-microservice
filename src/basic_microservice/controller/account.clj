@@ -5,5 +5,5 @@
 (defn create-account!
   [name]
   (let [account (logic.account/new-account name)]
-    (database.account/create-account! name)
+    (database.account/create-account! account)
     account))
