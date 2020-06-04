@@ -7,3 +7,7 @@
   (let [account (logic.account/new-account name)]
     (database.account/create-account! account)
     account))
+
+(defn get-account
+  [id]
+  (database.account/get-account id))

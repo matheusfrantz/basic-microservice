@@ -6,7 +6,9 @@
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]))
 
 (defroutes routes
-           (GET "/account/:id" [] "Hello, world!")
+           (GET "/account/:id" request
+             (let [id (get-in request [:params :id])]
+               (response (controller.account/get-account id))))
            (POST "/account" request
              (let [name (get-in request [:body :name])]
                (response (controller.account/create-account! name)))))
