@@ -10,4 +10,4 @@
 
 (defn get-account
   [id]
-  (database.account/get-account id))
+  (first (database.account/get-account id)))
