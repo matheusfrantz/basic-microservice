@@ -6,3 +6,8 @@ A ready to use Clojure application with a minimal configuration.
 ```
 lein run
 ```
+
+## Test
+```
+lein test
+```
