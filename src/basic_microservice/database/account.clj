@@ -8,4 +8,4 @@
 
 (defn get-account
   [id]
-  (filter #(= id (get-in % [:id])) @account-state))
+  (first (filter #(= id (get-in % [:id])) @account-state)))

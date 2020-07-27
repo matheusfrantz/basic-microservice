@@ -16,7 +16,7 @@
 (defn get-account
   [request]
   (let [id      (get-in request [:params :id])
-        account (first (database.account/get-account id))]
+        account (database.account/get-account id)]
     (if-not account
       (not-found exception/not-found)
       (response account))))
