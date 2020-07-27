@@ -12,6 +12,7 @@
                  [ring/ring-jetty-adapter "1.8.1"]
                  [ring/ring-json "0.5.0"]]
 
-  :aliases {"lint" ["do" ["kibit"] ["cljfmt" "check"]]}
+  :aliases {"check" ["do" ["kibit"] ["cljfmt" "check"]]
+            "fix"   ["do" ["kibit" "--replace"] ["cljfmt" "fix"]]}
 
   :main basic-microservice.server)
