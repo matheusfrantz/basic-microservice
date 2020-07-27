@@ -3,7 +3,6 @@
             [compojure.core :refer [defroutes GET POST]]
             [compojure.route :as route]
             [ring.middleware.json :refer [wrap-json-body wrap-json-response]]
-            [ring.util.response :refer [not-found]]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]))
 
 (def not-found-response {:status 404
