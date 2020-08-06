@@ -20,3 +20,9 @@
     (if-not account
       (not-found exception/not-found)
       (response account))))
+
+(defn delete-account!
+  [request]
+  (let [id (get-in request [:params :id])]
+    (database.account/delete-account! id)
+    {:status 204}))

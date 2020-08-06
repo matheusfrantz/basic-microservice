@@ -8,4 +8,8 @@
 
 (defn get-account
   [id]
-  (first (filter #(= id (get-in % [:id])) @account-state)))
+  (first (filter #(= id (:id %)) @account-state)))
+
+(defn delete-account!
+  [id]
+  (swap! account-state #(remove (fn [account] (= id (:id account))) %)))
