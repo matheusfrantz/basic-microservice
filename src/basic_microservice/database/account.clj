@@ -8,7 +8,7 @@
 
 (defn get-account
   [id]
-  (first (filter #(= id (:id %)) @account-state)))
+   (first (filter #(= id (:id %)) @account-state)))
 
 (defn delete-account!
   [id]
