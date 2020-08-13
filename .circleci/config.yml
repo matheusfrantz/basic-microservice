@@ -33,6 +33,9 @@ jobs:
           key: v1-dependencies-{{ checksum "project.clj" }}
 
   lint:
+    docker:
+      - image: circleci/clojure:lein-2.7.1
+
     steps:
       - checkout
 
@@ -46,6 +49,9 @@ jobs:
       - run: lein check
 
   test:
+    docker:
+      - image: circleci/clojure:lein-2.7.1
+
     steps:
       - checkout
 
