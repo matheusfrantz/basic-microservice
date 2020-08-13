@@ -2,7 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-clojure/ for more details
 #
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
@@ -59,6 +59,7 @@ jobs:
       - run: lein test
 
 workflows:
+  version: 2
   validation:
     jobs:
       - build
