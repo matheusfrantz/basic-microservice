@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: circleci/clojure:lein-2.7.1
 
-    working_directory: ~/repo
+    working_directory: ~/basic-microservice
 
     environment:
       LEIN_ROOT: "true"
