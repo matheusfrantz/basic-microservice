@@ -36,7 +36,7 @@
                                       (mock/content-type "application/json")))]
 
     (is (= (:status response) 400)))
-  
+
   (let [response (service/handler (mock/request :get
                                                 "/account/123"))]
 
