@@ -48,7 +48,7 @@ jobs:
 
       - run: lein check
 
-  test:
+  unit-test:
     docker:
       - image: circleci/clojure:lein-2.7.1
 
@@ -64,6 +64,22 @@ jobs:
 
       - run: lein test
 
+  integration-test:
+    docker:
+      - image: circleci/clojure:lein-2.7.1
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "project.clj" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: lein test :integration
+
 workflows:
   version: 2
   validation:
@@ -72,6 +88,9 @@ workflows:
       - lint:
           requires:
             - build
-      - test:
+      - unit-test:
           requires:
             - lint
+      - integration-test:
+          requires:
+            - unit-test
