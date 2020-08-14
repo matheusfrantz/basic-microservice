@@ -30,6 +30,13 @@
       (is (= (:status response) 204)))))
 
 (deftest ^:integration invalid-account-test
+  (let [response (service/handler (-> (mock/request :post
+                                                    "/account"
+                                                    {})
+                                      (mock/content-type "application/json")))]
+
+    (is (= (:status response) 400)))
+  
   (let [response (service/handler (mock/request :get
                                                 "/account/123"))]
 
