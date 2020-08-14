@@ -2,7 +2,7 @@
   (:require [basic-microservice.logic.account :as logic.account]
             [clojure.test :refer :all]))
 
-(deftest new-account-test
+(deftest ^:default new-account-test
   (testing "creates a new account"
     (let [name    "John"
           account (logic.account/new-account name)]
