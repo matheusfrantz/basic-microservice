@@ -2,7 +2,7 @@
   :description "A ready to use Clojure application with a minimal configuration."
   :url "https://github.com/matheusfrantz/basic-microservice"
 
-  :plugins [[lein-cljfmt "0.6.8"]
+  :plugins [[lein-cljfmt "0.7.0"]
             [lein-kibit "0.1.8"]]
 
   :dependencies [[org.clojure/clojure "1.10.1"]
