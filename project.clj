@@ -10,7 +10,7 @@
                  [ring/ring-core "1.8.2"]
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-jetty-adapter "1.8.2"]
-                 [ring/ring-json "0.5.0"]
+                 [ring/ring-json "0.5.1"]
                  [ring/ring-mock "0.4.0"]]
 
   :test-selectors {:default     (complement :integration)
