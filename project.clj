@@ -5,7 +5,7 @@
   :plugins [[lein-cljfmt "0.7.0"]
             [lein-kibit "0.1.8"]]
 
-  :dependencies [[org.clojure/clojure "1.10.2"]
+  :dependencies [[org.clojure/clojure "1.10.3"]
                  [compojure "1.6.2"]
                  [ring/ring-core "1.8.2"]
                  [ring/ring-defaults "0.3.2"]
