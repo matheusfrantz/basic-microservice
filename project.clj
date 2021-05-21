@@ -3,7 +3,8 @@
   :url "https://github.com/matheusfrantz/basic-microservice"
 
   :plugins [[lein-cljfmt "0.7.0"]
-            [lein-kibit "0.1.8"]]
+            [lein-kibit "0.1.8"]
+            [lein-cloverage "1.2.2"]]
 
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [compojure "1.6.2"]
