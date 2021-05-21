@@ -23,6 +23,10 @@
 
 (defn delete-account!
   [request]
-  (let [id (get-in request [:params :id])]
-    (database.account/delete-account! id)
-    {:status 204}))
+  (let [id      (get-in request [:params :id])
+        account (database.account/get-account id)]
+    (if-not account
+      (not-found exception/not-found)
+      (do
+        (database.account/delete-account! id)
+        {:status 204}))))

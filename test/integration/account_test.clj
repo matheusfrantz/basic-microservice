@@ -40,4 +40,9 @@
   (let [response (service/handler (mock/request :get
                                                 "/account/123"))]
 
+    (is (= (:status response) 404)))
+
+  (let [response (service/handler (mock/request :delete
+                                                "/account/123"))]
+
     (is (= (:status response) 404))))
