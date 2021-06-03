@@ -8,9 +8,9 @@
 
 (defn routes [storage]
   (compojure.core/routes
-   (POST "/account" request (controller.account/create-account! request storage))
-   (GET "/account/:id" request (controller.account/get-account request storage))
-   (DELETE "/account/:id" request (controller.account/delete-account! request storage))
+   (POST "/account" {{:keys [name]} :body} (controller.account/create-account! name storage))
+   (GET "/account/:id" [id] (controller.account/get-account id storage))
+   (DELETE "/account/:id" [id] (controller.account/delete-account! id storage))
    (route/not-found {:body exception/not-found})))
 
 (defn handler [storage]
