@@ -7,6 +7,7 @@
             [lein-cloverage "1.2.2"]]
 
   :dependencies [[org.clojure/clojure "1.10.3"]
+                 [com.stuartsierra/component "1.0.0"]
                  [compojure "1.6.2"]
                  [ring/ring-core "1.9.3"]
                  [ring/ring-defaults "0.3.2"]
