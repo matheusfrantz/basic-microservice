@@ -14,7 +14,8 @@
    (route/not-found {:body exception/not-found})))
 
 (defn handler [storage]
-  (-> (routes storage)
+  (-> storage
+      (routes)
       (wrap-json-body {:keywords? true})
       (wrap-json-response)
       (wrap-defaults api-defaults)))
