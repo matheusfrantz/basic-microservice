@@ -5,7 +5,6 @@
 (defrecord HttpServer [port handler storage]
   component/Lifecycle
   (start [component]
-    (println storage)
     (assoc component :http-server (run-jetty (handler storage) {:port  port
                                                                 :join? false})))
 
