@@ -13,9 +13,9 @@
   protocol.storage/Storage
   (fetch [_ key] (first (filter #(= key (:id %)) @storage)))
 
-  (store! [_ object] (swap! storage conj object))
+  (store! [_ element] (swap! storage conj element))
 
-  (delete! [_ key] (swap! storage #(remove (fn [account] (= key (:id account))) %))))
+  (delete! [_ key] (swap! storage #(remove (fn [element] (= key (:id element))) %))))
 
 (defn new-storage []
   (map->Storage {}))

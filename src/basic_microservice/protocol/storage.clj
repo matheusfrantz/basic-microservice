@@ -2,5 +2,5 @@
 
 (defprotocol Storage
   (fetch [component key])
-  (store! [component object])
+  (store! [component element])
   (delete! [component key]))
