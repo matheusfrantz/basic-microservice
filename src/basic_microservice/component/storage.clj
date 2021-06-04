@@ -13,7 +13,7 @@
   protocol.storage/Storage
   (fetch [_ key] (first (filter #(= key (:id %)) @storage)))
 
-  (store! [_ element] (swap! storage conj element))
+  (store! [_ element] (last (swap! storage conj element)))
 
   (delete! [_ key] (swap! storage #(remove (fn [element] (= key (:id element))) %))))
 
