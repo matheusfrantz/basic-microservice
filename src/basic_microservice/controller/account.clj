@@ -1,32 +1,16 @@
 (ns basic-microservice.controller.account
   (:require [basic-microservice.database.account :as database.account]
-            [basic-microservice.exception :as exception]
-            [basic-microservice.logic.account :as logic.account]
-            [ring.util.response :refer [bad-request not-found response]]))
+            [basic-microservice.logic.account :as logic.account]))
 
 (defn create-account!
-  [request]
-  (let [name (get-in request [:body :name])]
-    (if-not name
-      (bad-request exception/bad-request)
-      (let [account (logic.account/new-account name)]
-        (database.account/create-account! account)
-        (response account)))))
+  [name storage]
+  (let [account (logic.account/new-account name)]
+    (database.account/create-account! account storage)))
 
 (defn get-account
-  [request]
-  (let [id      (get-in request [:params :id])
-        account (database.account/get-account id)]
-    (if-not account
-      (not-found exception/not-found)
-      (response account))))
+  [id storage]
+  (database.account/get-account id storage))
 
 (defn delete-account!
-  [request]
-  (let [id      (get-in request [:params :id])
-        account (database.account/get-account id)]
-    (if-not account
-      (not-found exception/not-found)
-      (do
-        (database.account/delete-account! id)
-        {:status 204}))))
+  [id storage]
+  (database.account/delete-account! id storage))

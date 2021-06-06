@@ -1,8 +1,6 @@
 (ns basic-microservice.server
-  (:require [basic-microservice.service :as service])
-  (:use ring.adapter.jetty))
+  (:require [basic-microservice.component :as component]))
 
 (defn -main
   []
-  (run-jetty service/handler {:port  3000
-                              :join? false}))
+  (component/start-system!))
