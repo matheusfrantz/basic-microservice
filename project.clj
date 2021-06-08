@@ -12,14 +12,14 @@
                  [ring/ring-core "1.9.3"]
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-jetty-adapter "1.9.3"]
-                 [ring/ring-json "0.5.1"]
-                 [ring/ring-mock "0.4.0"]]
+                 [ring/ring-json "0.5.1"]]
 
   :test-selectors {:default     (complement :integration)
                    :integration :integration
                    :all         (constantly true)}
 
-  :aliases {"check" ["do" ["kibit"] ["cljfmt" "check"]]
-            "fix"   ["do" ["kibit" "--replace"] ["cljfmt" "fix"]]}
+  :aliases {"check"    ["do" ["kibit"] ["cljfmt" "check"]]
+            "fix"      ["do" ["kibit" "--replace"] ["cljfmt" "fix"]]
+            "coverage" ["cloverage"]}
 
   :main basic-microservice.server)
