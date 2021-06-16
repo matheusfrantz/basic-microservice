@@ -1,8 +1,8 @@
-(ns integration.account-test
+(ns basic-microservice.integration.account-test
   (:require [basic-microservice.component :as component]
+            [basic-microservice.integration.helper :as helper]
             [basic-microservice.service :as service]
             [clojure.test :refer :all]
-            [integration.helper :as helper]
             [ring.mock.request :as mock]))
 
 (def account (helper/generate-body {:name "John"}))

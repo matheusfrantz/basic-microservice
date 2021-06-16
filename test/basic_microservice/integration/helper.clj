@@ -1,4 +1,4 @@
-(ns integration.helper
+(ns basic-microservice.integration.helper
   (:require [cheshire.core :as json]))
 
 (defn generate-body [body]
