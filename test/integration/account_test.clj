@@ -18,20 +18,20 @@
           body     (helper/parse-body (:body response))
           id       (:id body)]
 
-      (is (= (:status response) 200))
-      (is (= (:name body) "John"))
+      (is (= 200 (:status response)))
+      (is (= "John" (:name body)))
 
       (let [response (handler (mock/request :get
                                             (str "/account/" id)))
             body     (helper/parse-body (:body response))]
 
-        (is (= (:status response) 200))
-        (is (= (:name body) "John")))
+        (is (= 200 (:status response)))
+        (is (= "John" (:name body))))
 
       (let [response (handler (mock/request :delete
                                             (str "/account/" id)))]
 
-        (is (= (:status response) 204))))))
+        (is (= 204 (:status response)))))))
 
 (deftest ^:integration invalid-account-test
   (let [system  (component/start-system!)
@@ -42,14 +42,14 @@
                                               {})
                                 (mock/content-type "application/json")))]
 
-      (is (= (:status response) 400)))
+      (is (= 400 (:status response))))
 
     (let [response (handler (mock/request :get
                                           "/account/123"))]
 
-      (is (= (:status response) 404)))
+      (is (= 404 (:status response))))
 
     (let [response (handler (mock/request :delete
                                           "/account/123"))]
 
-      (is (= (:status response) 204)))))
+      (is (= 204 (:status response))))))
