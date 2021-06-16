@@ -10,7 +10,7 @@
 (deftest ^:default new-storage
   (testing "creates a new storage"
     (let [storage (component/start (component.storage/new-storage))]
-      (is (= (protocol.storage/store! storage account) account))
-      (is (= (protocol.storage/fetch storage 1) account))
+      (is (= account (protocol.storage/store! storage account)))
+      (is (= account (protocol.storage/fetch storage 1)))
       (is (empty? (protocol.storage/delete! storage 1)))
-      (is (= (protocol.storage/fetch storage 1) nil)))))
+      (is (= nil (protocol.storage/fetch storage 1))))))

@@ -8,4 +8,4 @@
           account (logic.account/new-account name)]
       (is (some? account))
       (is (some? (:id account)))
-      (is (= (:name account) name)))))
+      (is (= name (:name account))))))
