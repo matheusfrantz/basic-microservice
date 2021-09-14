@@ -11,7 +11,7 @@
                  [compojure "1.6.2"]
                  [ring/ring-core "1.9.4"]
                  [ring/ring-defaults "0.3.3"]
-                 [ring/ring-jetty-adapter "1.9.3"]
+                 [ring/ring-jetty-adapter "1.9.4"]
                  [ring/ring-json "0.5.1"]
                  [ring/ring-mock "0.4.0"]]
 
