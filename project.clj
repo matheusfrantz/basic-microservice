@@ -10,6 +10,7 @@
                  [com.stuartsierra/component "1.0.0"]
                  [compojure "1.6.2"]
                  [prismatic/schema "1.1.12"]
+                 [prismatic/schema-generators "0.1.3"]
                  [ring/ring-core "1.9.4"]
                  [ring/ring-defaults "0.3.3"]
                  [ring/ring-jetty-adapter "1.9.4"]
