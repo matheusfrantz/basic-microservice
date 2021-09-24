@@ -16,8 +16,8 @@ jobs:
     - name: Install dependencies
       run: lein deps
     - name: Run checks
-      run: lein lint
+      run: lein check
     - name: Run unit tests
-      run: lein unit-test
+      run: lein test
     - name: Run integration tests
-      run: lein integration-test
+      run: lein test :integration
