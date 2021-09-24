@@ -10,8 +10,8 @@
   (testing "creates a new storage"
     (let [storage (component/start (component.storage/new-storage))
           account (generators/generate model.account/Account)
-          uuid    (:id account)]
+          id      (:id account)]
       (is (= account (protocol.storage/store! storage account)))
-      (is (= account (protocol.storage/fetch storage uuid)))
-      (is (empty? (protocol.storage/delete! storage uuid)))
-      (is (= nil (protocol.storage/fetch storage uuid))))))
+      (is (= account (protocol.storage/fetch storage id)))
+      (is (empty? (protocol.storage/delete! storage id)))
+      (is (= nil (protocol.storage/fetch storage id))))))
