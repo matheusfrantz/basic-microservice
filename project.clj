@@ -8,9 +8,9 @@
 
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [com.stuartsierra/component "1.0.0"]
-                 [compojure "1.6.2"]
-                 [prismatic/schema "1.2.0"]
-                 [prismatic/schema-generators "0.1.4"]
+                 [compojure "1.7.0"]
+                 [prismatic/schema "1.4.0"]
+                 [prismatic/schema-generators "0.1.5"]
                  [ring/ring-core "1.9.5"]
                  [ring/ring-defaults "0.3.3"]
                  [ring/ring-jetty-adapter "1.9.5"]
