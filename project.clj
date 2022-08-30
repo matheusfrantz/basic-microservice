@@ -6,7 +6,7 @@
             [lein-kibit "0.1.8"]
             [lein-cloverage "1.2.2"]]
 
-  :dependencies [[org.clojure/clojure "1.11.0"]
+  :dependencies [[org.clojure/clojure "1.11.1"]
                  [com.stuartsierra/component "1.0.0"]
                  [compojure "1.6.2"]
                  [prismatic/schema "1.2.0"]
